@@ -78,11 +78,30 @@ Adjust the width of the bottom assembly by loosening the underside screws and sl
 
 ## Battery replacement
 When the battery dies, remove the arm assembly that exposes the battery slot. Gently pull the PCB out enough to remove the battery. Tape or a small tool can be helpful in pulling/pushing the battery free. Insert a fresh battery and re-assemble.
+
 ![image](./images/2025-02-21-144004_005.jpeg)
 
 # JFO Workbench
 ![image](./images/JFOBenchBoxArt.png)
 
 ## Workbench PCB
+The workbench PCB is a shield type PCB meant to pair with a Waveshare ESP32-C3-Zero MCU. The PCB comes mostly pre-assembled with only the MCU needing to be added. We've increased the size of the pads for the MCU to make hand soldering a bit easier. 
+
+The PCB itself comes with 88 recessed neopixel (WS2812-mini-E) LEDs evenly distributed around the board's edge, two JST connectors for USB-C breakout with USB2.0 data connection to the MCU, 3A polyfuses with solder jumper bypasses, and a physical AP Mode switch.
+
+### Disclaimer
+We've tested the PCB with up to 3A input power which is the max rating for the USB-C connectors we utilize as well as the max for devices without specific USB-PD (power delivery) configuration. We however limit the amperage in software to 1A since not all power supplies/computer ports/etc are capable of delivery 3A continuously and 1A generated a decent brightness output. The software limit can easily be changed by the user in WLED settings, and the hardware limit can be removed by closing the solder jumper bypasses next to each polyfuse, we however do not accept any liability for user modifications to our devices.
 
 ## WLED
+A fast and feature-rich implementation of an ESP8266/ESP32 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs or also SPI based chipsets like the WS2801 and APA102!
+
+[Source](https://github.com/wled/WLED)
+
+### Why WLED?
+We utilize WLED as our firmware of choice for the workbench PCB as it is robust, well-maintained, and has cross platform functionality with PC, Mac, Android, and iOS devices. It is also relatively simple to get up and running with no coding necessary for our users. 
+
+### Installation
+The firmware can be easily loaded by utilizing their [web installer](install.wled.me). Navigate to this page, plug in your device (the Workbench in this case) and click Install. Your computer should prompt you to select the correct device, we recommend disconnecting other microcontroller boards such as Proffie/GHv4/CFX before installing.
+
+### Kno.WLED.ge
+You can find a ton more information [here](https://kno.wled.ge)
