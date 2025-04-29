@@ -101,7 +101,68 @@ A fast and feature-rich implementation of an ESP8266/ESP32 webserver to control 
 We utilize WLED as our firmware of choice for the workbench PCB as it is robust, well-maintained, and has cross platform functionality with PC, Mac, Android, and iOS devices. It is also relatively simple to get up and running with no coding necessary for our users. 
 
 ### Installation
-The firmware can be easily loaded by utilizing their [web installer](install.wled.me). Navigate to this page, plug in your device (the Workbench in this case) and click Install. Your computer should prompt you to select the correct device, we recommend disconnecting other microcontroller boards such as Proffie/GHv4/CFX before installing.
+The firmware can be easily loaded by utilizing their [web installer](https://install.wled.me). Navigate to this page, plug in your device (the Workbench in this case) and click Install. Your computer should prompt you to select the correct device, we recommend disconnecting other microcontroller boards such as Proffie/GHv4/CFX before installing.
 
 ### Kno.WLED.ge
 You can find a ton more information [here](https://kno.wled.ge)
+
+### WLED+
+WLED+ is a third party Android and iOS application for controlling WLED devices. It works with any existing WLED device (including our workbench) and has a cleaner more modern UI and runs natively on both Android and iOS phones and tablets. You can find it [here](https://wledplus.com)
+
+We highly recommend using this software for controlling the workbench and have been using it ourselves for most of our testing and development process.
+
+### Pre-Installed Setup
+If you bought one of our kits pre-installed we will have already loaded a default config and preset bank for WLED onto the workbench. However, the workbench will not be aware of your local wifi details. You have two options to control it from here: 
+
+- Control it through the WLED-AP WiFi Hotspot
+    If the workbench is unable to find the pre-configured wifi network it will instead create it's own WiFi Hotspot called "WLED-AP" and the default password of "wled1234". You can connect directly to this WiFi hotspot and control the device through the web interface.
+
+- Change WiFi details and control it through your local WiFi
+    1. Plug the workbench into your computer with either USB-C port
+    2. Navigate to the [web installer](https://install.wled.me)
+    3. Click "Install"
+
+        ![image](./images/install_button.png)
+
+    4. Select the device from the available ports
+
+        ![image](./images/port_select.png)
+    
+    5. Click "Change Wi-Fi"
+
+        ![image](./images/options.png)
+    
+    6. It should prompt you for your WiFi credentials then connect automatically
+    7. Once completed you should see the following dialog
+
+        ![image](./images/connected.png)
+    
+    8. You can then click "Visit Device" to open the web interface or open the WLED+ app from your phone or tablet to adjust settings.
+
+### Self-Install
+If you bought the workbench as a kit and are doing the install yourself good luck! (jk we are working on finishing this portion of the documentation and will have it available soon, if you have questions don't hesitate to ask!)
+
+### Shadowfoil Default Config and Preset Bank
+We have put together our default config and preset bank and exported them to json files for anyone to then upload onto their workbench if they don't want to fiddle with settings or presets. You can find them in this repository here:
+
+[Config](./config/JFO_Config.json)
+
+[Presets](./config/JFO_Presets.json)
+
+Once you have these files saved to your local computer you can upload them to the workbench by following these instructions
+
+1. Navigate to the WLED web portal for your device (if you go to the install page with your device plugged into your computer and click install it will show you the "Visit Device" button which takes you there)
+2. Click Config
+
+    ![image](./images/config.png)
+
+3. Click Security & Updates
+
+    ![image](./images/security.png)
+
+4. Scroll down to Backup & Restore
+
+    ![image](./images/restore.png)
+
+5. Upload the presets file to the Restore presets input
+6. Upload the config file to the Restore configuration input
