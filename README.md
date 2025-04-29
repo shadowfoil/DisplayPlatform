@@ -36,7 +36,7 @@ The TouchSense PCB runs on a standard CR2032 coin cell battery and should get ar
 
 ## Installation
 ### Prep work:
-1. Glue pre-wired 0402 LEDs to the underside of the acrylic posts with a drop of CA/Super glue.
+1. Glue pre-wired 0802 LEDs to the underside of the resin posts with a drop of CA/Super glue. The LEDs should be positioned with the light side in the channel facing the top of the post.
 2. Allow these to dry fully before continuing
 3. Ensure you have 1.5mm, 2mm, and 2.5mm hex drivers
 
@@ -49,10 +49,10 @@ The TouchSense PCB runs on a standard CR2032 coin cell battery and should get ar
 4. Using 2mm hex driver, remove the single set screw from each arm.
 
 ### Assembly:
-1. Once the glue has dried on the acrylic posts gently thread the wires down through the upper portion of the arm assembly. This may take some gentle finangling to get the wires to thread out the center hole in the bottom of the upper arm. Tweezers can be helpful at this step.
+1. Once the glue has dried on the resin posts gently thread the wires down through the upper portion of the arm assembly. This may take some gentle finangling to get the wires to thread out the center hole in the bottom of the upper arm. Tweezers can be helpful at this step.
 2. Next, carefully thread the wire ends through the center of the lower half of the arm assembly so that it extends into the area shared with the center piece.
 3. Re-insert the screws for the arm assembly removed during disassembly. The arm angle can be adjusted before tightening screws as desired.
-4. If using connectors solder them to the LED wire leads, if hardwiring you can solder the wires directly to the GND and OUT pads of the PCB.
+4. If using connectors solder them to the LED wire leads; if hardwiring you can solder the wires directly to the GND and OUT pads of the PCB.
 5. Gently break the touch rails off the main PCB.
 
     ![image](./images/2025-02-21-142708_002.jpg)
@@ -115,7 +115,7 @@ We highly recommend using this software for controlling the workbench and have b
 If you bought one of our kits pre-installed we will have already loaded a default config and preset bank for WLED onto the workbench. However, the workbench will not be aware of your local wifi details. You have two options to control it from here: 
 
 - OPTION 1: Control it through the WLED-AP WiFi Hotspot
-    If the workbench is unable to find the pre-configured wifi network it will instead create it's own WiFi Hotspot called "WLED-AP" and the default password of "wled1234". You can connect directly to this WiFi hotspot and control the device through the web interface.
+    If the workbench is unable to find the pre-configured wifi network it will instead create its own WiFi Hotspot called "SHADOWFOIL" and does not have a password. You can connect directly to this WiFi hotspot and control the device through the web interface.
 
 - OPTION 2: Change WiFi details and control it through your local WiFi
     1. Plug the workbench into your computer with either USB-C port
@@ -140,7 +140,7 @@ If you bought one of our kits pre-installed we will have already loaded a defaul
     8. You can then click "Visit Device" to open the web interface or open the WLED+ app from your phone or tablet to adjust settings.
 
 ### Self-Install
-If you bought the workbench as a kit and are doing the install yourself good luck! (jk we are working on finishing this portion of the documentation and will have it available soon, if you have questions don't hesitate to ask!)
+If you bought the workbench as a kit and are doing the install yourself, good luck! (jk we are working on finishing this portion of the documentation and will have it available soon, if you have questions don't hesitate to ask!) An important note is that the JFO board is set tonuse GPIO 5 for neopixel data instead of WLED's default GPIO 2. You will need to specify that in the WLED config settings.
 
 ### Shadowfoil Default Config and Preset Bank
 We have put together our default config and preset bank and exported them to json files for anyone to then upload onto their workbench if they don't want to fiddle with settings or presets. You can find them in this repository here:
