@@ -114,10 +114,10 @@ We highly recommend using this software for controlling the workbench and have b
 ### Pre-Installed Setup
 If you bought one of our kits pre-installed we will have already loaded a default config and preset bank for WLED onto the workbench. However, the workbench will not be aware of your local wifi details. You have two options to control it from here: 
 
-- Control it through the WLED-AP WiFi Hotspot
+- OPTION 1: Control it through the WLED-AP WiFi Hotspot
     If the workbench is unable to find the pre-configured wifi network it will instead create it's own WiFi Hotspot called "WLED-AP" and the default password of "wled1234". You can connect directly to this WiFi hotspot and control the device through the web interface.
 
-- Change WiFi details and control it through your local WiFi
+- OPTION 2: Change WiFi details and control it through your local WiFi
     1. Plug the workbench into your computer with either USB-C port
     2. Navigate to the [web installer](https://install.wled.me)
     3. Click "Install"
